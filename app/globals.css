@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0d0d0d;
+    --foreground: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-dark-950 text-white font-poppins;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-text bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-primary text-white px-6 py-3 rounded-2xl font-semibold 
+           hover:scale-105 transform transition-all duration-300 
+           hover:shadow-lg hover:shadow-primary-500/50;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary-500 text-primary-500 px-6 py-3 
+           rounded-2xl font-semibold hover:bg-primary-500 hover:text-white 
+           transform transition-all duration-300 hover:scale-105;
+  }
+  
+  .card-hover {
+    @apply hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/20 
+           transform transition-all duration-500 ease-out;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #27272a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E0161B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F61621;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3D transforms for flip cards */
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Chatbot scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-white\/20::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background-color: transparent;
+} 
