@@ -198,7 +198,6 @@ export const FitnessAssistant = () => {
         body: JSON.stringify({
           message,
           userBiodata: biodata || userBiodata,
-          conversationHistory: messages.slice(-6), // Send last 6 messages for context
         }),
       });
 
@@ -206,7 +205,7 @@ export const FitnessAssistant = () => {
       
       setIsTyping(false);
       
-      if (data.success) {
+      if (response.ok && data.message) {
         const newMessage: Message = {
           id: Date.now().toString(),
           type: 'bot',
@@ -215,8 +214,9 @@ export const FitnessAssistant = () => {
         };
         setMessages(prev => [...prev, newMessage]);
       } else {
-        // Fallback to local response if API fails
-        addBotMessage(data.message || "I'm having some connectivity issues, but I'm still here to help! Ask me about our classes, trainers, or membership plans.", 500);
+        // Use the fallback message from API or show default
+        const fallbackMessage = data.message || "I'm having some connectivity issues, but I'm still here to help! Ask me about our classes, trainers, or membership plans.";
+        addBotMessage(fallbackMessage, 500);
       }
     } catch (error) {
       console.error('Error calling Gemini API:', error);
