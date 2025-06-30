@@ -33,7 +33,7 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (item: any) => {
+  const handleNavClick = (item: { name: string; href: string; type: string; section?: string }) => {
     setIsMobileMenuOpen(false);
     
     // If we're on the home page and the item has a section, scroll to it

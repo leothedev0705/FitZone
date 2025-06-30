@@ -52,7 +52,7 @@ export class FitnessChatbotService {
 
   // Get personalized workout recommendations
   private getWorkoutRecommendations(profile: UserProfile): string {
-    const { fitnessGoal, experienceLevel, availableDays } = profile;
+    const { fitnessGoal, experienceLevel } = profile;
     let recommendations = '';
 
     switch (fitnessGoal) {

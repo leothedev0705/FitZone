@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Clock, Users, Zap, Calendar, MapPin } from 'lucide-react';
+import { Clock, Users, Zap, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
@@ -154,7 +154,7 @@ export default function Classes() {
       </section>
 
       {/* Class Categories */}
-      {classCategories.map((category, categoryIndex) => (
+                  {classCategories.map((category) => (
         <section key={category.id} className="section-padding">
           <div className="container mx-auto container-padding">
             <motion.div

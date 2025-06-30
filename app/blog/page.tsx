@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { Calendar, Clock, User, ArrowRight, Heart } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { Footer } from '@/components/sections/Footer';

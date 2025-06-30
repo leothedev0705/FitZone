@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Play, ArrowRight, Star, Users } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { scrollToSection } from '@/lib/utils';
+
 
 export const Hero = () => {
   return (

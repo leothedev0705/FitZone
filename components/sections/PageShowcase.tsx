@@ -86,7 +86,7 @@ export const PageShowcase = () => {
 
         {/* Featured Page */}
         <div className="mb-16">
-          {pages.filter(page => page.featured).map((page, index) => (
+          {pages.filter(page => page.featured).map((page) => (
             <motion.div
               key={page.title}
               className="glass rounded-3xl overflow-hidden card-hover"

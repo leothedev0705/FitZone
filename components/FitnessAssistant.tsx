@@ -110,7 +110,7 @@ export const FitnessAssistant = () => {
         }, 500);
       }
     }
-  }, [isOpen, profileCompleted, userBiodata]);
+  }, [isOpen, profileCompleted, userBiodata, messages.length]);
 
   const addBotMessage = (content: string, delay = 1000) => {
     setIsTyping(true);
@@ -146,7 +146,7 @@ export const FitnessAssistant = () => {
 
     if (biodataStep < steps.length) {
       const currentStep = steps[biodataStep];
-      let value: any = input.trim();
+      let value: string | number = input.trim();
 
       // Handle different input types
       if (currentStep.key === 'age') {
@@ -257,7 +257,7 @@ export const FitnessAssistant = () => {
     setInputValue('');
   };
 
-  const handleQuickAction = (action: any) => {
+  const handleQuickAction = (action: { href: string; title?: string }) => {
     if (!profileCompleted) {
       addBotMessage("Please complete your basic profile first so I can provide personalized recommendations! 😊");
       return;

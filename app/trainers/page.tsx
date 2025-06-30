@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Star, Award, Instagram, Twitter, Facebook } from 'lucide-react';
+import { Calendar, Star, Award, Instagram, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
